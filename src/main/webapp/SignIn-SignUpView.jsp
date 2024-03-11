@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp_SignIn</title>
     <style type="text/css">
-    		*{
+    	  	*{
     margin: 0px;
     padding: 0px;;
   }
@@ -19,10 +19,13 @@
   {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
     background: linear-gradient(to bottom,  rgba(0, 0, 255, 0.801),  rgb(5, 5, 114));
     width: 1000px;
     height: 500px;
-    margin: 5% auto;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.151);
   }
@@ -50,7 +53,7 @@
     margin: auto;
   }
   .box-2{
-    background-color: white;
+    background-color: whitesmoke;
     margin: 5px;
   }
   .login-form-container
@@ -69,10 +72,14 @@
     box-sizing: border-box;
     font-size: 14px;
     padding: 10px;
-    border-radius: 7px;
-    border: 1px solid rgb(168, 168, 168);
     width: 250px;
     outline: none;
+    border-radius: 10px;
+    border: none;
+    background-color: whitesmoke;  
+    box-shadow: inset 5px 5px 5px -1px rgba(88, 85, 85, 0.11),
+    inset -5px -5px 5px -1px white;
+    
   }
   .login-button{
     box-sizing: border-box;
@@ -110,20 +117,20 @@
     width: 250px;
     background-color:  #D90368;  
   }
-  .signup-button:active, .login-button:active{
+  .signup-button:active, .login-button:active,.content-holder button:active{
     opacity: 80%;  
   }
   .signup-button:hover{
-    box-shadow: 2px 2px #4b0224;
+    box-shadow: 0 0 0 1px whitesmoke,0 0 0 2px #D90368;
   }
   .login-button:hover{
-    box-shadow: 2px 2px rgb(71, 43, 228);
+    box-shadow: 0 0 0 1px whitesmoke,0 0 0 2px rgb(39,39,218);
   }
   .signup-button,.login-button,.content-holder button{
     cursor: pointer;
   }
   .content-holder button:hover{
-    box-shadow: 2px 2px 20px 2px wheat;
+    box-shadow: 0 0 0 2px whitesmoke;
   }
   .forget{
     cursor: pointer;
