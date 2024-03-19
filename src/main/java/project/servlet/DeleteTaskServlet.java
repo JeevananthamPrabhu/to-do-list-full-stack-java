@@ -33,6 +33,7 @@ public class DeleteTaskServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		String username=request.getParameter("username");
 		String task=request.getParameter("task");
+		
         TaskListModel model=new TaskListModel();
   
         model.settask(task); 
