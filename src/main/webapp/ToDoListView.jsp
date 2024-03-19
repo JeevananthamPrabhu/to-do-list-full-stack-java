@@ -19,7 +19,6 @@
             cursor: pointer;
         }
         .container{
-            width: fit-content;
             margin: 20px 50px;
             background-color: antiquewhite;
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -175,6 +174,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+    var table=document.querySelector('table');
+    if(table.rows.length==1)table.style.display = 'none';
     	function logout(){
     		Swal.fire({
                 title: 'Are you sure want to Logout ? ',
