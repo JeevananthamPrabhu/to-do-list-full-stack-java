@@ -51,6 +51,7 @@ public class SignInController {
 				TaskListModel m=new TaskListModel();
 				m.settask(r.getString(1));
 				m.setstatus(r.getString(2));
+				m.setdate(r.getString(3));
 				resultList.add(m);
 			}
 			return true;		

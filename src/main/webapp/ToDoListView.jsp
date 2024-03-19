@@ -41,6 +41,7 @@
             border: 2px solid rgb(110, 105, 105);
             border-radius: 10px;
             max-width: 500px;
+            min-width: 220px;
             text-align: center;
         }
         .form-task button{
@@ -59,7 +60,6 @@
             border: 1px solid gray;
             border-collapse: collapse;
             table-layout: fixed;
-            width: 100%;
             height: 50px;
             font-size:larger;
         }
@@ -128,12 +128,20 @@
         <h1>Welcome <span><%=username %></span> <br>Your's To-Do List</h1>
         <form class="form-task" action="TaskServlet?username=<%=username %>" method="post">
             <input type="text" placeholder="Write a new task . . ." name="inputtask" oninput="resizeInput(this)" required>
+            <input type="text" name="date" id="date" placeholder="Enter Due Date . . ." onfocus="(this.type='date')"required>
             <button type="submit">Add Task</button>
         </form>
         <div class="list">
             <table>
+           		<colgroup >
+                    <col style="width: 20%;">
+                    <col style="width: 10%;">
+                    <col style="width: 10%;">
+                    <col style="width: 20%;">
+                </colgroup>
                 <tr>
                     <th>Tasks</th>
+                    <th>Due Date</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -144,6 +152,7 @@
                     %>
                     <tr>
                         <td class="task"><%=model.gettask() %></td>
+                        <td><%= model.getdate() %> </td>
                         <td id="status"><%= model.getstatus() %> </td>
                         <td>
 	                        <form class="status-form" action="StatusServlet?task=<%=model.gettask()%>&username=<%=username %>" method="post">

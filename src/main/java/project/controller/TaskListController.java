@@ -17,7 +17,7 @@ public class TaskListController {
 public boolean store() {
 		try {
 			Statement st=Connect.connectionStatement();
-			String sql="insert into "+model.getusername()+"(Task,Status) values('"+model.gettask()+"','"+model.getstatus()+"')";
+			String sql="insert into "+model.getusername()+"(Task,Status,DueDate) values('"+model.gettask()+"','"+model.getstatus()+"','"+model.getdate()+"')";
 			st.execute(sql);
 			return true;
 		} catch (Exception e) {
@@ -34,6 +34,7 @@ public boolean get() {
 			TaskListModel m=new TaskListModel();
 			m.settask(r.getString(1));
 			m.setstatus(r.getString(2));
+			m.setdate(r.getString(3));
 			resultList.add(m);
 		}
 		return true;		

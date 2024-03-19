@@ -36,10 +36,13 @@ public class TaskServlet extends HttpServlet {
 		
 		String username=request.getParameter("username");
 		String task=request.getParameter("inputtask");
+		String date=request.getParameter("date");
+		
         TaskListModel model=new TaskListModel();
   
         model.settask(task); 
         model.setusername(username);
+        model.setdate(date);
      //   System.out.println(request.getParameter("username"));
         TaskListController control=new TaskListController(model);
         if(control.store())
