@@ -35,14 +35,17 @@
             margin-bottom: 20px;
         }
         .form-task input{
-            font-size: large;
+        	font-size: large;
             outline: none;
             padding: 10px;
             border: 2px solid rgb(110, 105, 105);
             border-radius: 10px;
+        }
+        .form-task #taskfield{
             max-width: 500px;
-            min-width: 220px;
-            text-align: center;
+        }
+         .form-task #datefield{
+            width: 123px;
         }
         .form-task button{
             width: 150px;
@@ -127,8 +130,8 @@
     <% String username=(String)request.getAttribute("username"); %>
         <h1>Welcome <span><%=username %></span> <br>Your's To-Do List</h1>
         <form class="form-task" action="TaskServlet?username=<%=username %>" method="post">
-            <input type="text" placeholder="Write a new task . . ." name="inputtask" oninput="resizeInput(this)" required>
-            <input type="text" name="date" id="date" placeholder="Enter Due Date . . ." onfocus="(this.type='date')"required>
+            <input id="taskfield" type="text" placeholder="Write a new task . . ." name="inputtask" oninput="resizeInput(this)" required>
+            <input id="datefield" type="text" name="date" id="date" placeholder="Due date . . ." onfocus="(this.type='date')"required>
             <button type="submit">Add Task</button>
         </form>
         <div class="list">

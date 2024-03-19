@@ -36,9 +36,9 @@ public class TaskServlet extends HttpServlet {
 		
 		String username=request.getParameter("username");
 		String task=request.getParameter("inputtask");
-		String date=request.getParameter("date");
-		
-        TaskListModel model=new TaskListModel();
+		String datearray[]=request.getParameter("date").split("-");
+		String date=datearray[2]+"-"+datearray[1]+"-"+datearray[0];
+		TaskListModel model=new TaskListModel();
   
         model.settask(task); 
         model.setusername(username);
